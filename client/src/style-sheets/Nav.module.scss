@@ -1,0 +1,178 @@
+@import './variables';
+@import './mixins';
+
+.nav_container{
+
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 10vh;
+    background-color: $dark-orange;
+    // background-image: linear-gradient(3deg, $dark-orange, rgb(218, 181, 164));
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: -6px 4px 10px rgba(0, 0, 0, 0.438);
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    
+    img{
+        width: 10vw;
+        @media screen and (max-width: 600px){
+
+            width: 25vw;
+            
+        }
+    }
+
+    button{
+
+        position: relative;
+        @include button($orange, $orange, 10vw, 5vh, 1vw, 2s);
+        color: #000;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.438); 
+        margin-right: 30px;
+
+
+        @media screen and (max-width: 600px) {
+            
+            width: fit-content;
+            padding: 1.5vw;
+            height: fit-content;
+            font-size: 2vw;
+            margin-right: 7px;
+
+        }
+
+        @media screen and (max-width: $phone) {
+            
+            font-size: 3vw;
+            padding: 1.3vw;
+        }
+    }
+
+    .search_container{
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .button_show_filters, .button_reset{
+
+            @include button($orange, $orange, fit-content , 5vh, 1vw, 2s);
+            color: #000;
+            margin: 5px;
+
+            @media screen and (max-width: 600px) {
+                
+                font-size: 2vw;
+                padding: 1.3vw;
+                height: fit-content;
+
+            }
+
+            @media screen and (max-width: $phone) {
+            
+                font-size: 3vw;
+            }
+                
+        }
+
+    }
+
+    .filters{
+
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        top: 100%;
+        width: 100vw;
+        height: 8vh;
+        background-color: $dark-orange;
+        border-top: 2px solid #f5f5f57f;
+
+        @media screen and (max-width: $phone) {
+
+            margin-left: 0;
+            margin-right: 0;
+            
+        }
+
+        .button_close_filters{
+
+            @include button($red, $red, 2vw , 2vw, 1vw, 2s);
+            transition: none;
+            transform: none;
+
+            @media screen and (max-width: 600px) {
+            
+                font-size: 2.5vw;
+                width: fit-content;
+                height: fit-content;
+                padding: 1vw 2vw;
+            }
+
+            @media screen and (max-width: $phone) {
+            
+                font-size: 3.5vw;
+                width: fit-content;
+                height: fit-content;
+                padding: 2vw 3vw;
+            }
+
+        }
+
+        div{
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+        }
+
+        .filters_select{
+
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+
+            @media screen and (max-width: 600px) {
+            
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            
+        }
+
+        select{
+
+            background-color: #f5f5f5;
+            margin: 0 1vw;
+            padding: 0 0.5vw;
+            border: none;
+            height: 4vh;
+            width: 7vw;
+            min-width: fit-content;
+            min-height: fit-content;
+            border-radius: 5px;
+            
+            @media screen and (max-width: 600px){
+
+                height: fit-content;
+                
+            }
+        }
+
+        label{
+
+            @media screen and (max-width: $phone) {
+            
+                font-size: 3.5vw;
+            }
+        }
+
+    }
+}

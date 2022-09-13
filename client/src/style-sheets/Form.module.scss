@@ -1,0 +1,184 @@
+@import './variables';
+@import './mixins';
+
+    .form{
+
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+        @media screen and (max-width: $phone){
+            
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-top: 13vh;
+        }
+    
+        div{
+    
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            label{
+
+                font-weight: 500;
+                text-transform: uppercase;
+                text-shadow: 1px 1px 0px $white-transparent;
+
+
+                span{
+
+                    color: $red;
+                    font-weight: 600;
+                    text-transform: capitalize;
+                }
+            }
+            
+            input{
+    
+                height: 4.5vh;
+                width: 50%;
+                border: none;
+                margin: 2vh 0;
+                border-radius: 10px;
+                padding: 0 1vw;
+                background-color: $white-transparent;
+                box-shadow: 6px 3px 10px rgba(0, 0, 0, 0.349);
+                font-family: 'Fira Code', monospace;
+
+                &::placeholder{
+
+                    color: black;
+                    font-weight: 300;
+
+                }
+                
+                @media screen and (max-width: $mid-screen) {
+                    
+                    width: 30vw;
+                }
+
+                @media screen and (max-width: $phone) {
+                    
+                    width: 70vw;
+                }
+            }
+    
+            select{
+    
+                width: 55%;
+                height: 4.5vh;
+                margin: 2vh 0;
+                padding: 0 1vw;
+                border: none;
+                border-radius: 10px;
+                background-color: $white-transparent;
+                box-shadow: 6px 3px 10px rgba(0, 0, 0, 0.349);
+                text-transform: capitalize;
+
+
+                    
+                @media screen and (max-width: $mid-screen) {
+                    
+                    width: 32vw;
+                }
+
+                @media screen and (max-width: $phone) {
+                    
+                    width: 72vw;
+                }
+            }
+
+            option{
+
+                text-transform: capitalize;
+            }
+
+
+            .range{
+                
+                -webkit-appearance: none;
+                appearance: none;
+                outline: none;
+                background-color: $white-transparent;
+                height: fit-content;
+                overflow: hidden;
+                padding: 0;
+
+                &::-webkit-slider-thumb{
+
+                    -webkit-appearance: none;
+                    width: 15px;
+                    height: 15px;
+                    background-image: linear-gradient($red, rgb(180, 3, 3));
+                    border-radius: 50px;
+                    box-shadow: -410px 0 0 400px $dark-orange;
+                    
+                }
+            }
+    
+            .types_list{
+    
+                display: flex;
+                width: 50%;
+                flex-direction: column;
+
+                @media screen and (max-width: $phone) {
+                    
+                    width: 60vw;
+                    margin-bottom: 6vh;
+                }
+    
+                div{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+    
+                    li{
+                        color: #f5f5f5;
+                        text-transform: capitalize;
+                    }
+
+                    button{
+    
+                        border: none;
+                        border-radius: 5px;
+                        text-align: center;
+                        background-color: $red;
+                        color: #f5f5f5;
+    
+                        &:hover{
+                            opacity: 0.7;
+                        }
+                    }
+                }
+            }
+    
+        }
+    
+    }
+
+    .submit_button{
+
+        position: relative;
+        bottom: -3vw;
+
+        @include button($red, $red, 30vw, 6vh, 1.5vw, 1s);
+
+        @media screen and (max-width: 600px) {
+                
+            font-size: 4vw;
+            width: 50vw;
+        }
+
+        @media screen and (max-width: $phone){
+            
+            width: 80vw;
+            margin-top: 3vh;
+        }
+    }

@@ -1,0 +1,37 @@
+@import './mixins';
+@import './variables';
+
+.search_bar{
+
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+
+    div{
+
+        @include button($orange, $orange, fit-content, fit-content, 1vw, 2s);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.438); 
+        position: relative;
+        margin: 0 5px;
+        
+        img{
+
+            width: 18px;
+            padding: 0.5vw 0.7vw;
+        }
+    }
+
+    input{
+
+        border-radius: 50px;
+        border: none;
+        width: 15vw;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.438); 
+        background-color: #f5f5f5;
+        padding: 0 1vw;
+
+
+    }
+
+}
